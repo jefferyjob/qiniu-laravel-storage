@@ -29,5 +29,9 @@
       ]
     }
   },
+  "config": {
+    "minimum-stability": "beta",
+    "prefer-stable": true
+  },
   "license": "MIT"
 }
