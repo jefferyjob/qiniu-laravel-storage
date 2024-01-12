@@ -45,7 +45,7 @@
 
 ## 安装
 
- - ```composer require Jefferyjob/qiniu-laravel-storage:0.10.3```
+ - ```composer require Jefferyjob/qiniu-laravel-storage:^1.0```
  - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```Jefferyjob\QiniuStorage\QiniuFilesystemServiceProvider::class```
  - ```config/filesystem.php``` 里面的 ```disks```数组加上：
 
