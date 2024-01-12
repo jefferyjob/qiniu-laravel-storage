@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-namespace zgldh\QiniuStorage\Plugins;
+namespace Jefferyjob\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -15,7 +15,7 @@ use League\Flysystem\Plugin\AbstractPlugin;
  * 查看图像属性 <br>
  * $disk        = \Storage::disk('qiniu'); <br>
  * $re          = $disk->getDriver()->imageInfo('foo/bar1.css'); <br>
- * @package zgldh\QiniuStorage\Plugins
+ * @package Jefferyjob\QiniuStorage\Plugins
  */
 class ImageInfo extends AbstractPlugin {
 

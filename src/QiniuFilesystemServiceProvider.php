@@ -1,24 +1,24 @@
-<?php namespace zgldh\QiniuStorage;
+<?php namespace Jefferyjob\QiniuStorage;
 
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use zgldh\QiniuStorage\Plugins\DownloadUrl;
-use zgldh\QiniuStorage\Plugins\Fetch;
-use zgldh\QiniuStorage\Plugins\ImageExif;
-use zgldh\QiniuStorage\Plugins\ImageInfo;
-use zgldh\QiniuStorage\Plugins\AvInfo;
-use zgldh\QiniuStorage\Plugins\ImagePreviewUrl;
-use zgldh\QiniuStorage\Plugins\LastReturn;
-use zgldh\QiniuStorage\Plugins\PersistentFop;
-use zgldh\QiniuStorage\Plugins\PersistentStatus;
-use zgldh\QiniuStorage\Plugins\PrivateDownloadUrl;
-use zgldh\QiniuStorage\Plugins\Qetag;
-use zgldh\QiniuStorage\Plugins\UploadToken;
-use zgldh\QiniuStorage\Plugins\PrivateImagePreviewUrl;
-use zgldh\QiniuStorage\Plugins\VerifyCallback;
-use zgldh\QiniuStorage\Plugins\WithUploadToken;
+use Jefferyjob\QiniuStorage\Plugins\DownloadUrl;
+use Jefferyjob\QiniuStorage\Plugins\Fetch;
+use Jefferyjob\QiniuStorage\Plugins\ImageExif;
+use Jefferyjob\QiniuStorage\Plugins\ImageInfo;
+use Jefferyjob\QiniuStorage\Plugins\AvInfo;
+use Jefferyjob\QiniuStorage\Plugins\ImagePreviewUrl;
+use Jefferyjob\QiniuStorage\Plugins\LastReturn;
+use Jefferyjob\QiniuStorage\Plugins\PersistentFop;
+use Jefferyjob\QiniuStorage\Plugins\PersistentStatus;
+use Jefferyjob\QiniuStorage\Plugins\PrivateDownloadUrl;
+use Jefferyjob\QiniuStorage\Plugins\Qetag;
+use Jefferyjob\QiniuStorage\Plugins\UploadToken;
+use Jefferyjob\QiniuStorage\Plugins\PrivateImagePreviewUrl;
+use Jefferyjob\QiniuStorage\Plugins\VerifyCallback;
+use Jefferyjob\QiniuStorage\Plugins\WithUploadToken;
 
 class QiniuFilesystemServiceProvider extends ServiceProvider
 {

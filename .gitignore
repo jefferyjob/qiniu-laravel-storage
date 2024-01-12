@@ -1,12 +1,13 @@
-*.phar
-*.zip
-build/artifacts
-phpunit.xml
-phpunit.functional.xml
+# Edit Dir
+.idea
+.project
 .DS_Store
-.swp
-.build
-composer.lock
+.vscode
+.fleet
+
+# Project
 vendor
-src/package.xml
-.idea/
+.env*
+.phpunit.*
+tests/codeCoverage
+false

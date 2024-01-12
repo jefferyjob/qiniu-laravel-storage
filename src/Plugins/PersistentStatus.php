@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-namespace zgldh\QiniuStorage\Plugins;
+namespace Jefferyjob\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -15,7 +15,7 @@ use League\Flysystem\Plugin\AbstractPlugin;
  * 查询持久化操作状态 <br>
  * $disk        = \Storage::disk('qiniu'); <br>
  * $re          = $disk->getDriver()->persistentStatus('foo/bar1.css'); <br>
- * @package zgldh\QiniuStorage\Plugins
+ * @package Jefferyjob\QiniuStorage\Plugins
  */
 class PersistentStatus extends AbstractPlugin {
 

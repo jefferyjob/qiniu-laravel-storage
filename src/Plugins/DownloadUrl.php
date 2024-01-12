@@ -6,7 +6,7 @@
      * Time: 16:42
      */
 
-    namespace zgldh\QiniuStorage\Plugins;
+    namespace Jefferyjob\QiniuStorage\Plugins;
 
     use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -15,7 +15,7 @@
      * 得到公有资源下载地址 <br>
      * $disk        = \Storage::disk('qiniu'); <br>
      * $re          = $disk->getDriver()->downloadUrl('foo/bar1.css'); <br>
-     * @package zgldh\QiniuStorage\Plugins
+     * @package Jefferyjob\QiniuStorage\Plugins
      */
     class DownloadUrl extends AbstractPlugin
     {

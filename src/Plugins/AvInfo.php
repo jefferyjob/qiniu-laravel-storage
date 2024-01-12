@@ -6,7 +6,7 @@
  * Time: 16:44
  */
 
-namespace zgldh\QiniuStorage\Plugins;
+namespace Jefferyjob\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -15,7 +15,7 @@ use League\Flysystem\Plugin\AbstractPlugin;
  * 查看多媒体文件属性 <br>
  * $disk        = \Storage::disk('qiniu'); <br>
  * $re          = $disk->getDriver()->avInfo('filename.mp3'); <br>
- * @package zgldh\QiniuStorage\Plugins
+ * @package Jefferyjob\QiniuStorage\Plugins
  */
 class AvInfo extends AbstractPlugin {
 

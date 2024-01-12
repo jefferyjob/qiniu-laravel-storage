@@ -6,7 +6,7 @@
  * Time: 13:09
  */
 
-namespace zgldh\QiniuStorage\Plugins;
+namespace Jefferyjob\QiniuStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 
@@ -15,7 +15,7 @@ use League\Flysystem\Plugin\AbstractPlugin;
  * 获取私有bucket图片预览URL <br>
  * $disk        = \Storage::disk('qiniu'); <br>
  * $re          = $disk->getDriver()->privateImagePreviewUrl('foo/bar1.css',$ops); <br>
- * @package zgldh\QiniuStorage\Plugins
+ * @package Jefferyjob\QiniuStorage\Plugins
  */
 class PrivateImagePreviewUrl extends AbstractPlugin {
 
