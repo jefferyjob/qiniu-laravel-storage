@@ -45,8 +45,8 @@
 
 ## 安装
 
- - ```composer require zgldh/qiniu-laravel-storage:0.10.3```
- - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class```
+ - ```composer require Jefferyjob/qiniu-laravel-storage:0.10.3```
+ - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```Jefferyjob\QiniuStorage\QiniuFilesystemServiceProvider::class```
  - ```config/filesystem.php``` 里面的 ```disks```数组加上：
 
 ```php
@@ -141,7 +141,7 @@
 
 ```php
 
-    use zgldh\QiniuStorage\QiniuStorage;
+    use Jefferyjob\QiniuStorage\QiniuStorage;
 
     $disk = QiniuStorage::disk('qiniu');
     $disk->exists('file.jpg');                      //文件是否存在

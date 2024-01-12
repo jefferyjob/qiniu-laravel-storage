@@ -25,7 +25,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "zgldh\\QiniuStorage\\QiniuFilesystemServiceProvider"
+        "Jefferyjob\\QiniuStorage\\QiniuFilesystemServiceProvider"
       ]
     }
   },
