@@ -10,7 +10,7 @@
     "laravel"
   ],
   "require": {
-    "php": ">=5.3.3",
+    "php": ">=8.0",
     "qiniu/php-sdk": "^7.2",
     "league/flysystem": "^3.23"
   },

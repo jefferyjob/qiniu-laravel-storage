@@ -107,7 +107,7 @@ class QiniuUrl implements JsonSerializable
      * which is a value of any type other than a resource.
      * @since 5.4.0
      */
-    function jsonSerialize()
+    function jsonSerialize() : mixed
     {
         return $this->__toString();
     }
