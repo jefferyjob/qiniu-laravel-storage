@@ -62,10 +62,10 @@ class QiniuAdapter implements FilesystemAdapter
         $this->secret_key = $secret_key;
         $this->bucket = $bucket;
         $this->domains = $domains;
-        $this->setPathPrefix('http://' . $this->domains['default']);
-        $this->setDomainPrefix('http://' . $this->domains['default'], 'default');
-        $this->setDomainPrefix('https://' . $this->domains['https'], 'https');
-        $this->setDomainPrefix('http://' . $this->domains['custom'], 'custom');
+        $this->setPathPrefix($this->domains['default']);
+        $this->setDomainPrefix( $this->domains['default'], 'default');
+        $this->setDomainPrefix($this->domains['https'], 'https');
+        $this->setDomainPrefix($this->domains['custom'], 'custom');
         $this->notify_url = $notify_url;
         $this->access = $access;
         $this->hotlinkPreventionKey = $hotlinkPreventionKey;
