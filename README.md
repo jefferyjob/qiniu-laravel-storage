@@ -1,78 +1,48 @@
-# Qiniu 云储存 Laravel 5/6/7/8/9 Storage版
+# Qiniu 云储存 Laravel 5/6/7/8/9/10 Storage版
 
 基于 https://github.com/qiniu/php-sdk 开发
 
-符合Laravel 5/6/7/8/9 的Storage用法。
+符合Laravel 5/6/7/8/9/10 的Storage用法。
 
 ## 注意
 
-  从七牛获取到的`putTime`时间戳，是以 100纳秒 为单位的。 
+从七牛获取到的`putTime`时间戳，是以 100纳秒 为单位的。 
   
-  参考 https://developer.qiniu.com/kodo/api/1308/stat https://developer.qiniu.com/kodo/api/1284/list
+参考 
+- https://developer.qiniu.com/kodo/api/1308/stat 
+- https://developer.qiniu.com/kodo/api/1284/list
   
-  PHP 可以用 [Carbon](http://carbon.nesbot.com/docs/) `Carbon::createFromTimestampMs($putTime/10000)` 来保证最大精度
-  
-  
-  JavaScript 可以用 [moment](http://momentjs.cn/docs/#/parsing/unix-offset/)  `moment(putTime/10000)` 来保证最大精度
-   
 
-## 更新
+PHP 可以用 [Carbon](http://carbon.nesbot.com/docs/) `Carbon::createFromTimestampMs($putTime/10000)` 来保证最大精度
 
- v9.0
-  支持 Laravel 9
-
- v0.10
-  支持“公开空间”的 CDN 时间戳防盗链
-
- v0.9
-  兼容 Laravel 5.5 的自动包安装功能
-
- v0.8
-  1. 修正了getUrl
-  2. 修正了最新的 Qiniu API 适配
-
- v0.7
-  1. 增加了 ```withUploadToken```, ```lastReturn``` 等命令。
-  2. 修正了代码内的一些typo
-
- v0.6 增加了```fetch```, ```qetag``` 命令。
-
- v0.5 增加了```QiniuUrl```来更方便的设置文件 URL 参数。
-
- v0.3 增加了对PIPE以及回调地址参数的配置。 感谢abcsun提供的灵感。
-
- v0.2 提供了对多域名的支持。这是为了配合七牛的默认域名、HTTPS域名和自定义域名而添加的功能。
+JavaScript 可以用 [moment](http://momentjs.cn/docs/#/parsing/unix-offset/)  `moment(putTime/10000)` 来保证最大精度
 
 ## 安装
 
- - ```composer require Jefferyjob/qiniu-laravel-storage:^1.0```
- - ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```Jefferyjob\QiniuStorage\QiniuFilesystemServiceProvider::class```
- - ```config/filesystem.php``` 里面的 ```disks```数组加上：
+- ```composer require Jefferyjob/qiniu-laravel-storage:^1.0```
+- ```config/app.php``` 里面的 ```providers``` 数组， 加上一行 ```Jefferyjob\QiniuStorage\QiniuFilesystemServiceProvider::class```
+- ```config/filesystem.php``` 里面的 ```disks```数组加上：
 
 ```php
-
-    'disks' => [
-        ... ,
-        'qiniu' => [
-            'driver'  => 'qiniu',
-            'domains' => [
-                'default'   => 'xxxxx.com1.z0.glb.clouddn.com', //你的七牛域名
-                'https'     => 'dn-yourdomain.qbox.me',         //你的HTTPS域名
-                'custom'    => 'static.abc.com',                //Useless 没啥用，请直接使用上面的 default 项
-             ],
-            'access_key'=> '',  //AccessKey
-            'secret_key'=> '',  //SecretKey
-            'bucket'    => '',  //Bucket名字
-            'notify_url'=> '',  //持久化处理回调地址
-            'access'    => 'public',  //空间访问控制 public 或 private
-            'hotlink_prevention_key' => 'afc89ff8bd2axxxxxxxxxxxxxxbb', // CDN 时间戳防盗链的 key。 设置为 null 则不启用本功能。
-//            'hotlink_prevention_key' => 'cbab68a279xxxxxxxxxxab509a', // 同上，备用
-        ],
+'disks' => [
+    // ...
+    'qiniu' => [
+        'driver'  => 'qiniu',
+        'domains' => [
+            'default' => 'http://xxxxx.com1.z0.glb.clouddn.com', //你的七牛域名
+            'https' => 'https://dn-yourdomain.qbox.me',         //你的HTTPS域名
+            'custom' => 'https://static.abc.com',  //Useless 没啥用，请直接使用上面的 default 项
+         ],
+        'access_key'=> '',  //AccessKey
+        'secret_key'=> '',  //SecretKey
+        'bucket'    => '',  //Bucket名字
+        'notify_url'=> '',  //持久化处理回调地址
+        'access'    => 'public',  //空间访问控制 public 或 private
+        // 'hotlink_prevention_key' => 'afc89ff8bd2axxxxxxxxxxxxxxbb', // CDN 时间戳防盗链的 key。 设置为 null 则不启用本功能。
+        // 'hotlink_prevention_key' => 'cbab68a279xxxxxxxxxxab509a', // 同上，备用
     ],
-
+],
 ```
-
- - 完成
 
 ## 使用
 
@@ -196,7 +166,6 @@
     $disk->fetch('http://abc.com/foo.jpg', 'bar.jpg'); //调用fetch将 foo.jpg 数据以 bar.jpg 的名字储存起来。
     $disk->qetag();     //得到最后一次执行 put, copy, append 等写入操作后，得到的hash值。详见 https://github.com/qiniu/qetag
     $disk->lastReturn();//得到最后一次执行 put, copy, append 等写入操作后，得到的返回值。
-
 ```
 
 
